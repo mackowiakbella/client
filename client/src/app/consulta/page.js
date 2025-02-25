@@ -7,7 +7,7 @@ export default function ListaConsulta() {
     const [consulta, setConsulta] = useState([]);
     const [loading, setLoading] = useState(true);
     const [busca, setBusca] = useState("");
-    const [filtro, setFiltro] = useState("medico"); // "medico" ou "paciente"
+    const [filtro, setFiltro] = useState("medico");
     const [mostrarInput, setMostrarInput] = useState(false);
 
     const listaConsulta = async () => {
@@ -16,7 +16,7 @@ export default function ListaConsulta() {
             const dados = await response.json();
             setConsulta(dados);
         } catch (error) {
-            console.error("Consulta não encontrada", error);
+            console.error("Consulta não encontrada!", error);
         } finally {
             setLoading(false);
         }
@@ -84,7 +84,7 @@ export default function ListaConsulta() {
                     ) : (
                         <tr>
                             <td colSpan="5" className={styles.td}>
-                                Nenhuma consulta encontrada.
+                                Nenhuma consulta encontrada!
                             </td>
                         </tr>
                     )}

@@ -15,7 +15,7 @@ export default function Pacientes() {
             const dados = await response.json();
             setPacientes(dados)
         } catch {
-            console.error("Nenhum paciente encontrado", error)
+            console.error("Nenhum paciente encontrado!", error)
         } finally {
             setLoading(false)
         }
@@ -85,7 +85,7 @@ export default function Pacientes() {
                     ) : (
                         <tr>
                             <td colSpan="5" className={styles.td}>
-                                Nenhum médico encontrado.
+                                Nenhum paciente encontrado!
                             </td>
                         </tr>
                     )}
